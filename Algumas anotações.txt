@@ -60,9 +60,14 @@ Remover o repositório implica em:
 ===========================================================================
     Subindo o Projeto no GitHub
 ===========================================================================
+Como verificar se um repositório está vinculado a um servidor remoto?
+git remote -v
 
-# Para incializar e subir o Projeto no GitHub
-git remote add origin https://github.com/jjvilar/Desafio CODE Nuclea.git
+Associando o repositório a um servidor.
+Para incializar e subir o Projeto no GitHub
+git remote add origin <nome do repositório criado no Github>
+
+git remote add origin https://github.com/jjvilar/CODE_Nuclea.git
 git branch -M main
 git push -u origin main
 
@@ -90,6 +95,9 @@ git status
 # Commitar alterações locais (se houver)
 git add .
 git commit -m "Sua mensagem de commit"
+
+# Enviar para o repositório remoto
+use "git push" to publish your local commits
 
 # Buscar atualizações do repositório remoto
 git fetch
