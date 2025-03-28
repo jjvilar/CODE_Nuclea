@@ -7,9 +7,9 @@
     "cypress:open": "cypress open"
   },
   "keywords": [],
-  "author": "",
+  "author": "Juliano José Vilar",
   "license": "ISC",
-  "description": "",
+  "description": "Desafio CODE_Nuclea",
   "dependencies": {
     "cypress": "^14.2.1"
   }
