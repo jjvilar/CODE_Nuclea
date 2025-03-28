@@ -1,0 +1,83 @@
+================================================================================================
+Configurando a pasta do repositório Git para rastreamento das mudanças, controle de acessos
+================================================================================================
+git config --global user.name "Juliano Vilar"
+git config --global user.email "juliano.jose.vilar@gmail.com"
+
+===========================================================================
+Inicializando um repositório Git
+===========================================================================
+- Crie uma pasta de trabalho no explorer
+- Selecione essa pasta de trabalho
+- Execute o gitbash here para abrir uma janela bash
+- digite o comando git init e tecle <Enter>
+- uma pasta .git será criada indicando que o repositório foi criado
+- para listar o conteúdo da pasta digite ls
+- para listar as pastas escondidas digite ls -a
+
+===========================================================================
+    Verificando status do repositório e adicionando arquivos
+===========================================================================
+Na linha de comando digite:
+git status <Enter>
+git add <nome do arquivo> 
+ou 
+git add . (para todos os arquivos)
+
+
+===========================================================================
+    Subindo o Projeto no GitHub
+===========================================================================
+
+# Para incializar e subir o Projeto no GitHub
+git remote add origin https://github.com/jjvilar/Desafio CODE Nuclea.git
+git branch -M main
+git push -u origin main
+
+--------------------------------------
+# Se houver algun conflito faça:
+# Forçar o push (use com cuidado)
+git push -f origin main
+
+# Ou fazer um pull e resolver conflitos
+git pull origin main --rebase
+---------------------------------------
+
+# Resolva os conflitos, se houver
+git add .
+git commit -m "Resolvendo conflitos de merge "
+git push origin main
+
+===========================================================================
+    Subindo atualizações
+===========================================================================
+
+# Verificar se há alterações locais não commitadas
+git status
+
+# Commitar alterações locais (se houver)
+git add .
+git commit -m "Sua mensagem de commit"
+
+# Buscar atualizações do repositório remoto
+git fetch
+
+# Verificar o status em relação ao repositório remoto
+git status
+
+# Verificar o log de commits que estão no remoto e não no local
+git log HEAD..origin/main --oneline
+
+# Atualizar o repositório local com as mudanças do remoto
+git pull origin main --rebase
+
+# Resolver conflitos (se houver)
+# Resolva os conflitos manualmente, depois:
+git add .
+git commit -m "Resolve merge conflicts"
+
+# Enviar suas mudanças para o repositório remoto
+git push origin main
+
+
+
