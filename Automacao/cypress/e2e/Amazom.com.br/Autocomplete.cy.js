@@ -35,7 +35,7 @@ describe('RT - Autocomplete', () => {
   })
 
   //CT-0003
-  it.skip('Sugestões de pesquisa com caracteres', () => {
+  it.skip('Sugestões de pesquisa com um caractere', () => {
     // Preenche o campo de pesquisa
     cy.get('#twotabsearchtextbox').type('a')
     // Aguarda as sugestões aparecerem e valida que existem sugestões
@@ -43,7 +43,7 @@ describe('RT - Autocomplete', () => {
   })
 
   //CT-0004
-  it('Sugestões de pesquisa com caracteres', () => {
+  it.skip('Sugestões de pesquisa com sequencia de caracteres', () => {
     // Preenche o campo de pesquisa
     cy.get('#twotabsearchtextbox').type('a')
     // Aguarda as sugestões aparecerem e valida que existem sugestões
@@ -63,7 +63,7 @@ describe('RT - Autocomplete', () => {
   })
 
   //Casos de CT-0005
-  it.skip('Deve preencher o campo de pesquisa e selecionar um item', () => {
+  it.skip('Deve preencher o campo de pesquisa com palavra inteira', () => {
     // Preenche o campo de pesquisa
     cy.get('#twotabsearchtextbox').type('iphone')
     // Aguarda as sugestões aparecerem e valida que existem sugestões
@@ -81,9 +81,50 @@ describe('RT - Autocomplete', () => {
     cy.get('span.a-color-state').should('contain.text', 'iphone'); 
   })
 
-  
+  //Casos de CT-0006
+  it('Preencher o campo de pesquisa com palavra sem resultado', () => {
+    // Preenche o campo de pesquisa com a palavra "Xareuto"
+    cy.get('#twotabsearchtextbox').type('Xareuto');
+    // Aguarda as sugestões aparecerem e valida que não existem sugestões
+    cy.get('.s-suggestion').should('not.exist');
+    // Clica no botão de pesquisa
+    cy.get('#nav-search-submit-button').click();
+    // Valida que a página de resultados exibe uma mensagem de "Nenhum resultado para Xareuto."
+    cy.get('.a-row').should('contain.text', 'Nenhum resultado para Xareuto.');
+  //})
+})
 
+  //Casos de CT-0007
+  it.skip('Deve preencher o campo de pesquisa com palavra composta', () => {
+    // Preenche o campo de pesquisa
+    cy.get('#twotabsearchtextbox').type('casa para gatos')
+    // Aguarda as sugestões aparecerem e valida que existem sugestões
+    cy.get('.s-suggestion').should('be.visible')
+    // Faz a captura da tela
+    capturarPrint()
+    // Captura a quantidade de sugestões
+    cy.get('.s-suggestion').its('length').then((qtdSugestoes) => {
+      // Valida que a quantidade de sugestões é maior que zero
+      expect(qtdSugestoes).to.be.greaterThan(0)
+    })
+    // Seleciona a primeira sugestão
+    cy.get('.s-suggestion').first().click()
+    // Valida que a página de resultados contém parte do nome do item pesquisado
+    cy.get('span.a-color-state').should('contain.text', 'casa para gatos'); 
+  })
 
-  
+  //CT-0007
+  it.skip('Realizar busca utilizando o ícone da lupa', () => {
+    // Preenche o campo de pesquisa
+    cy.get('#twotabsearchtextbox').type('Repelente')
+    // Aguarda as sugestões aparecerem e valida que existem sugestões
+    cy.get('.s-suggestion').should('be.visible')
+    // Faz a captura da tela
+    capturarPrint()
+    // Clica no botão de pesquisa
+    cy.get('#nav-search-submit-button').click()
+    // Valida que a página de resultados contém parte do nome do item pesquisado
+    cy.get('span.a-color-state').should('contain.text', 'Repelente');
 
+  })
 })
