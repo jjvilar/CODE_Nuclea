@@ -21,5 +21,9 @@
   "devDependencies": {
     "@types/cypress": "^0.1.6",
     "cypress-xpath": "^2.0.1"
+  },
+  "dependencies": {
+    "cypress": "^14.2.1",
+    "react-scripts": "^5.0.1"
   }
 }

@@ -69,9 +69,9 @@ describe('RT - Autocomplete', () => {
   // CT-0005
   it('Deve clicar no seletor "Todos"', () => {
     // Clica no seletor "Todos" (Categorias)
-    //cy.xpath('//input[@id="nav-search-label-id"]').click();
+    cy.xpath('//input[@id="nav-search-label-id"]').click();
     //div[2]//div[2]//select[@id="searchDropdownBox"]
-    cy.xpath('//select[@id="searchDropdownBox"]').select('Todos os departamentos');
+    //cy.xpath('//select[@id="searchDropdownBox"]').select('Todos os departamentos');
     // Removed invalid @FindBy decorator
     //cy.get('#nav-search-label-id').click();
     // Valida que o seletor foi aberto
