@@ -1,25 +1,17 @@
+// Ajuda o VSCode a entender o que é o arquivo e a fornecer recursos de autocompletar
 /// <reference types="cypress" />
 
-// Welcome to Cypress!
-//
-// This spec file contains a variety of sample tests
-// for a todo list app that are designed to demonstrate
-// the power of writing tests in Cypress.
-//
-// To learn more about how Cypress works and
-// what makes it such an awesome testing tool,
-// please read our getting started guide:
-// https://on.cypress.io/introduction-to-cypress
-
-describe('example to-do app', () => {
+describe('RT - Autocomplete', () => {
+  //Antes de cada teste, acessa a página da Amazon
   beforeEach(() => {
-    // Cypress starts out with a blank slate for each test
-    // so we must tell it to visit our website with the `cy.visit()` command.
-    // Since we want to visit the same URL at the start of all our tests,
-    // we include it in our beforeEach function so that it runs before each test
-    cy.visit('https://example.cypress.io/todo')
+    cy.visit('https://www.amazon.com.br/')
   })
 
+  it('Deve preencher o campo de pesquisa e selecionar um item', () => {
+    //Preenche o campo de pesquisa
+    cy.get('#twotabsearchtextbox').type('iphone 11')
+  })
+  /*
   it('displays two todo items by default', () => {
     // We use the `cy.get()` command to get all elements that match the selector.
     // Then, we use `should` to assert that there are two matched items,
@@ -139,5 +131,5 @@ describe('example to-do app', () => {
       // Finally, make sure that the clear button no longer exists.
       cy.contains('Clear completed').should('not.exist')
     })
+    */
   })
-})
