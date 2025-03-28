@@ -42,41 +42,46 @@ describe('RT - Autocomplete', () => {
     cy.get('.s-suggestion').should('be.visible')
   })
 
-  //Casos de CT-0004
+  //CT-0004
+  it('Sugestões de pesquisa com caracteres', () => {
+    // Preenche o campo de pesquisa
+    cy.get('#twotabsearchtextbox').type('a')
+    // Aguarda as sugestões aparecerem e valida que existem sugestões
+    cy.get('.s-suggestion').should('be.visible')
+    // Faz a captura da tela
+    capturarPrint()
+    // Preenche o campo de pesquisa
+    cy.get('#twotabsearchtextbox').type('m')
+    // Aguarda as sugestões aparecerem e valida que existem sugestões
+    cy.get('.s-suggestion').should('be.visible')
+    // Faz a captura da tela
+    capturarPrint()
+    // Preenche o campo de pesquisa
+    cy.get('#twotabsearchtextbox').type('c')
+    // Aguarda as sugestões aparecerem e valida que existem sugestões
+    cy.get('.s-suggestion').should('be.visible')
+  })
+
+  //Casos de CT-0005
   it.skip('Deve preencher o campo de pesquisa e selecionar um item', () => {
     // Preenche o campo de pesquisa
     cy.get('#twotabsearchtextbox').type('iphone')
-
     // Aguarda as sugestões aparecerem e valida que existem sugestões
     cy.get('.s-suggestion').should('be.visible')
-
     // Faz a captura da tela
     capturarPrint()
-
     // Captura a quantidade de sugestões
     cy.get('.s-suggestion').its('length').then((qtdSugestoes) => {
       // Valida que a quantidade de sugestões é maior que zero
       expect(qtdSugestoes).to.be.greaterThan(0)
     })
-   
     // Seleciona a primeira sugestão
     cy.get('.s-suggestion').first().click()
-
     // Valida que a página de resultados contém parte do nome do item pesquisado
     cy.get('span.a-color-state').should('contain.text', 'iphone'); 
   })
 
-  // CT-0005
-  it('Deve clicar no seletor "Todos"', () => {
-    // Clica no seletor "Todos" (Categorias)
-    cy.xpath('//input[@id="nav-search-label-id"]').click();
-    //div[2]//div[2]//select[@id="searchDropdownBox"]
-    //cy.xpath('//select[@id="searchDropdownBox"]').select('Todos os departamentos');
-    // Removed invalid @FindBy decorator
-    //cy.get('#nav-search-label-id').click();
-    // Valida que o seletor foi aberto
-    //cy.get('#nav-search-label-id').should('have.attr', 'aria-expanded', 'true');
-  });
+  
 
 
   
