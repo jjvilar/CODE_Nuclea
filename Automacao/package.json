@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/jjvilar/CODE_Nuclea/issues"
   },
-  "homepage": "https://github.com/jjvilar/CODE_Nuclea#readme"
+  "homepage": "https://github.com/jjvilar/CODE_Nuclea#readme",
+  "devDependencies": {
+    "@types/cypress": "^0.1.6",
+    "cypress-xpath": "^2.0.1"
+  }
 }
