@@ -7,13 +7,20 @@ import 'cypress-xpath';
 describe('Teste de Responsividade - Amazon', () => {
     const viewports = [
         { device: 'iPhone X', width: 375, height: 812 },
-       /* { device: 'iPad', width: 768, height: 1024 },
+        { device: 'iPad', width: 768, height: 1024 },
         { device: 'Desktop', width: 1920, height: 1080 },
+        /*
+        { device: 'Chromebook', width: 1366, height: 768 },
+        { device: 'Galaxy S5', width: 360, height: 640 },
+        { device: 'Galaxy Tab S6', width: 800, height: 1280 },
+        { device: 'Galaxy Note 10+', width: 412, height: 915 },
         { device: 'Galaxy S20', width: 360, height: 800 },
+        { device: 'iPhone 12 Pro', width: 390, height: 844 },
+        { device: 'iPad Mini', width: 768, height: 1024 },
+        { device: 'iPad Pro', width: 1024, height: 1366 },
+        { device: 'MacBook Air', width: 1440, height: 900 },
         { device: 'MacBook Pro 13', width: 1280, height: 800 },
-        { device: 'Surface Pro 7', width: 912, height: 1368 },
-        { device: 'Pixel 5', width: 393, height: 851 },
-         */
+        */
     ];
 
     beforeEach(() => {
