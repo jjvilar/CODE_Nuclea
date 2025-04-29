@@ -29,13 +29,13 @@ describe('RT - Autocomplete', () => {
   })
   
   //CT-0002
-  it.skip('Verificar a apresentação do campo de pesquisa', () => {
+  it('Verificar a apresentação do campo de pesquisa', () => {
     // Valida que o campo de pesquisa está visível
     cy.get('#twotabsearchtextbox').should('be.visible')
   })
 
   //CT-0003
-  it.skip('Sugestões de pesquisa com um caractere', () => {
+  it('Sugestões de pesquisa com um caractere', () => {
     // Preenche o campo de pesquisa
     cy.get('#twotabsearchtextbox').type('a')
     // Aguarda as sugestões aparecerem e valida que existem sugestões
@@ -43,7 +43,7 @@ describe('RT - Autocomplete', () => {
   })
 
   //CT-0004
-  it.skip('Sugestões de pesquisa com sequencia de caracteres', () => {
+  it('Sugestões de pesquisa com sequencia de caracteres', () => {
     // Preenche o campo de pesquisa
     cy.get('#twotabsearchtextbox').type('a')
     // Aguarda as sugestões aparecerem e valida que existem sugestões
@@ -63,7 +63,7 @@ describe('RT - Autocomplete', () => {
   })
 
   //Casos de CT-0005
-  it.skip('Deve preencher o campo de pesquisa com palavra inteira', () => {
+  it('Deve preencher o campo de pesquisa com palavra inteira', () => {
     // Preenche o campo de pesquisa
     cy.get('#twotabsearchtextbox').type('iphone')
     // Aguarda as sugestões aparecerem e valida que existem sugestões
@@ -95,7 +95,7 @@ describe('RT - Autocomplete', () => {
 })
 
   //Casos de CT-0007
-  it.skip('Deve preencher o campo de pesquisa com palavra composta', () => {
+  it('Deve preencher o campo de pesquisa com palavra composta', () => {
     // Preenche o campo de pesquisa
     cy.get('#twotabsearchtextbox').type('casa para gatos')
     // Aguarda as sugestões aparecerem e valida que existem sugestões
@@ -114,7 +114,7 @@ describe('RT - Autocomplete', () => {
   })
 
   //CT-0007
-  it.skip('Realizar busca utilizando o ícone da lupa', () => {
+  it('Realizar busca utilizando o ícone da lupa', () => {
     // Preenche o campo de pesquisa
     cy.get('#twotabsearchtextbox').type('Repelente')
     // Aguarda as sugestões aparecerem e valida que existem sugestões
